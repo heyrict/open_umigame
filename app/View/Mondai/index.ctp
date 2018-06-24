@@ -27,7 +27,7 @@ echo "(".$this->Html->image("zikan.png",array('class'=>'list-icon'))."時間制�
 echo "(".$this->Html->image("yami.png",array('class'=>'list-icon'))."闇スープ)　";
 echo "(".$this->Html->image("nanashi.png",array('class'=>'list-icon'))."名無し出題)　";
 echo "(".$this->Html->image("sashie.png",array('class'=>'list-icon'))."挿絵あり)";
-if ($this->params['paging']['Mondai']['page'] == 1){
+if ($mondailist[0]['Mondai']['seikai'] == 1){
     echo "<div class=\"black-bar margin_b10\"><h1>未解決問題</h1></div>";
     echo "<table class=\"mondai_table\">";
 }
@@ -45,7 +45,7 @@ for($i = 0;$i < count($mondailist);$i++){
         }
     } else {
         if ($sakai == 1){
-            if ($this->params['paging']['Mondai']['page'] == 1){
+            if ($mondailist[0]['Mondai']['seikai'] == 1){
                 echo "</table>";
             }
             echo "<div class=\"black-bar  margin_b10\"><h1>解決済みの問題</h1></div>";
